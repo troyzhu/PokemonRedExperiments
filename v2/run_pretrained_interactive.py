@@ -79,8 +79,11 @@ if __name__ == '__main__':
         except:
             agent_enabled = False
         if agent_enabled:
+            breakpoint()
             action, _states = model.predict(obs, deterministic=False)
+            breakpoint()
         obs, rewards, terminated, truncated, info = env.step(action)
+        breakpoint()
         env.render()
         if truncated:
             break
